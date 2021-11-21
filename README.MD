@@ -36,11 +36,13 @@ swagger:
   base_path:
 ```
 3、在mysql建一个数据库(库名如上“auth_frame”)
+
 4、进项目根目录初始化swag
 
 ```powershell
 >swag init
 ```
 5、运行项目
+
 6、在网页上输入host/swagger/index.html，测试和查看接口
 如（[http://127.0.0.1:8090/swagger/index.html](http://127.0.0.1:8090/swagger/index.html)）
