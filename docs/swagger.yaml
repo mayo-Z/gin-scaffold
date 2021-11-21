@@ -1,0 +1,185 @@
+definitions:
+  dto.AdminInfoOutput:
+    properties:
+      loginTime:
+        type: string
+      name:
+        type: string
+      uid:
+        type: integer
+    type: object
+  dto.AdminLoginInput:
+    properties:
+      password:
+        example: "123456"
+        type: string
+      username:
+        example: admin
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  dto.ChangePwdInput:
+    properties:
+      password:
+        example: "123456"
+        type: string
+    required:
+    - password
+    type: object
+  dto.RegisterInput:
+    properties:
+      password:
+        example: "123456"
+        type: string
+      username:
+        example: admin
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  middleware.Response:
+    properties:
+      data: {}
+      errmsg:
+        type: string
+      errno:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /admin/change_pwd:
+    post:
+      consumes:
+      - application/json
+      description: 修改密码
+      operationId: /admin/change_pwd
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ChangePwdInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 修改密码
+      tags:
+      - 用户接口
+  /admin/info:
+    get:
+      description: 用户信息
+      operationId: /admin/info
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/dto.AdminInfoOutput'
+              type: object
+      summary: 用户信息
+      tags:
+      - 用户接口
+  /auth/login:
+    post:
+      description: 用户登录
+      operationId: /auth/login
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AdminLoginInput'
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 用户登录
+      tags:
+      - 用户接口
+  /auth/logout:
+    get:
+      description: 用户注销
+      operationId: /auth/logout
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 用户注销
+      tags:
+      - 用户接口
+  /auth/quit:
+    get:
+      consumes:
+      - application/json
+      description: 用户退出
+      operationId: /auth/quit
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 用户退出
+      tags:
+      - 用户接口
+  /auth/register:
+    post:
+      description: 用户注册
+      operationId: /auth/register
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/dto.RegisterInput'
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 用户注册
+      tags:
+      - 用户接口
+swagger: "2.0"
