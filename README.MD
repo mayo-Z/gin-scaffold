@@ -16,8 +16,8 @@ git clone https://github.com/uptocorrupt/auth_frame.git
 
 4、进项目根目录初始化swag
 
-```powershell
->swag init
+```
+swag init
 ```
 5、运行项目
 
