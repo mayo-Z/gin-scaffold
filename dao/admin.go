@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"auth_frame/dto"
-	"auth_frame/public"
 	"errors"
+	"gin-scaffold/dto"
+	"gin-scaffold/public"
 	"github.com/jinzhu/gorm"
 )
 

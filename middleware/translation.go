@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"auth_frame/public"
+	"gin-scaffold/public"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/locales/en"
 	"github.com/go-playground/locales/zh"

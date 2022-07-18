@@ -9,7 +9,7 @@
 1、用git将项目保存到本地
 
 ```
-git clone https://github.com/uptocorrupt/auth_frame.git
+git clone https://github.com/uptocorrupt/gin-scaffold.git
 ```
 
 2、进config文件夹里修改配置文件:server、datasource、redis、swagger

@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"auth_frame/dao"
-	"auth_frame/public"
 	"errors"
+	"gin-scaffold/dao"
+	"gin-scaffold/public"
 	"github.com/gin-gonic/gin"
 	"strings"
 )

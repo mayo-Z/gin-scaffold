@@ -1,13 +1,13 @@
 package controller
 
 import (
-	"auth_frame/dao"
-	"auth_frame/dto"
-	"auth_frame/middleware"
-	"auth_frame/public"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"gin-scaffold/dao"
+	"gin-scaffold/dto"
+	"gin-scaffold/middleware"
+	"gin-scaffold/public"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"time"

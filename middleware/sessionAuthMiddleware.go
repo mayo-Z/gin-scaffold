@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"auth_frame/public"
 	"errors"
+	"gin-scaffold/public"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 )

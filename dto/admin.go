@@ -1,7 +1,7 @@
 package dto
 
 import (
-	"auth_frame/public"
+	"gin-scaffold/public"
 	"github.com/gin-gonic/gin"
 	"time"
 )

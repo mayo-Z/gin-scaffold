@@ -1,9 +1,9 @@
 package route
 
 import (
-	"auth_frame/controller"
-	"auth_frame/docs"
-	"auth_frame/middleware"
+	"gin-scaffold/controller"
+	"gin-scaffold/docs"
+	"gin-scaffold/middleware"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
