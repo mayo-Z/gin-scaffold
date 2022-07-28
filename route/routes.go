@@ -14,19 +14,7 @@ import (
 	"os"
 )
 
-// @title Swagger Example API
-// @version 1.0
-// @description my blog
-
-// @host localhost:8090
-// @BasePath /api
-
 func InitConfig() {
-	docs.SwaggerInfo.Title = viper.GetString("swagger.title")
-	docs.SwaggerInfo.Description = viper.GetString("swagger.desc")
-	docs.SwaggerInfo.Host = viper.GetString("swagger.host")
-	docs.SwaggerInfo.BasePath = viper.GetString("swagger.base_path")
-
 	work, _ := os.Getwd()
 	viper.SetConfigName("application")
 	viper.SetConfigType("yml")
@@ -35,6 +23,11 @@ func InitConfig() {
 	if err != nil {
 		panic("err")
 	}
+
+	docs.SwaggerInfo.Title = viper.GetString("swagger.title")
+	docs.SwaggerInfo.Description = viper.GetString("swagger.desc")
+	docs.SwaggerInfo.Host = viper.GetString("swagger.host")
+	docs.SwaggerInfo.BasePath = viper.GetString("swagger.base_path")
 }
 
 func InitRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
