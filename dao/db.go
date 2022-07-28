@@ -7,9 +7,9 @@ import (
 	"github.com/spf13/viper"
 )
 
-var DB *gorm.DB
+var db *gorm.DB
 
-func InitDB() *gorm.DB {
+func InitDB() {
 	driverName := viper.GetString("datasource.driverName")
 	name := viper.GetString("datasource.name")
 	password := viper.GetString("datasource.password")
@@ -31,10 +31,8 @@ func InitDB() *gorm.DB {
 		panic("failed to connect sql,err:" + err.Error())
 	}
 	db.AutoMigrate(&Admin{})
-	DB = db
-	return db
 }
 
 func GetDB() *gorm.DB {
-	return DB
+	return db
 }

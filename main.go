@@ -9,8 +9,8 @@ import (
 
 func main() {
 	route.InitConfig()
-	db := dao.InitDB()
-	defer db.Close()
+	dao.InitDB()
+
 	r := route.InitRouter()
 	port := viper.GetString("server.port")
 	r.Run(":" + port)

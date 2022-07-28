@@ -2,6 +2,7 @@ package route
 
 import (
 	"gin-scaffold/controller"
+	"gin-scaffold/dao"
 	"gin-scaffold/docs"
 	"gin-scaffold/middleware"
 	"github.com/gin-gonic/contrib/sessions"
@@ -48,11 +49,7 @@ func InitRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	//非登陆接口-----------------------------------------------------------------
 	adminLoginRouter := router.Group("/auth")
-	store, err := sessions.NewRedisStore(viper.GetInt("redis.size"),
-		viper.GetString("redis.network"),
-		viper.GetString("redis.address"),
-		viper.GetString("redis.password"),
-		[]byte(viper.GetString("redis.key")))
+	store, err := dao.GetSessionStore()
 	if err != nil {
 		log.Fatalf("sessions.NewRedisStoreerr:%v", err)
 	}
