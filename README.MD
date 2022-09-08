@@ -12,7 +12,7 @@
 git clone https://github.com/uptocorrupt/gin-scaffold.git
 ```
 
-2、进config文件夹里修改配置文件:server、datasource、redis、swagger
+2、进config文件夹里修改配置文件dev.yml:server、datasource、redis、swagger.并将其重命名为application.yml
 
 3、在mysql建一个数据库
 
