@@ -18,8 +18,8 @@ func JwtAuthMiddleware() gin.HandlerFunc {
 			return
 		}
 		tokenString = tokenString[7:]
-		token, claims, err := public.ParseToken(tokenString)
-		if err != nil || !token.Valid {
+		claims, err := public.ParseToken(tokenString)
+		if err != nil {
 			ResponseError(ctx, 2002, errors.New("权限不足"))
 			return
 		}
