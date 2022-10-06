@@ -46,7 +46,7 @@ func InitRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 	if err != nil {
 		log.Fatalf("sessions.NewRedisStoreerr:%v", err)
 	}
-
+	// mySession是返回給前端的sessionId名
 	adminLoginRouter.Use(
 		sessions.Sessions("mySession", store),
 		middleware.TranslationMiddleware())
