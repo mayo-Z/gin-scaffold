@@ -8,6 +8,7 @@ import (
 )
 
 var db *gorm.DB
+var err error
 
 func InitDB() {
 	driverName := viper.GetString("datasource.driverName")
@@ -26,7 +27,7 @@ func InitDB() {
 		database,
 		charset)
 
-	db, err := gorm.Open(driverName, args)
+	db, err = gorm.Open(driverName, args)
 	if err != nil {
 		panic("failed to connect sql,err:" + err.Error())
 	}
