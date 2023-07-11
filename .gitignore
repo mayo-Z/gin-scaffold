@@ -1,5 +1,4 @@
-
-config/application.yml
-.idea/vcs.xml
-.idea/modules.xml
-.idea/gin-scaffold.iml
+go.sum
+/.idea/
+/docs/
+application.yml

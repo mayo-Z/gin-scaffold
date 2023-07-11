@@ -1,3 +1,21 @@
+# 注意
+鉴于该脚手架bug较多，本项目已进行归档。新的脚手架请移步于→[gin-starter](https://github.com/uptocorrupt/gin-starter)
+
+已知bug:
+
+1、gorm库名更改："gorm.io/driver/mysql"和"gorm.io/gorm"
+
+2、gin-swagger库名更改：github.com/swaggo/gin-swagger
+
+3、dao结构体部分函数书写不规范,没有形成通用接口
+
+4、gorm修改结构体默认值不更新，需从传入结构体更改为传入map[string]interface{}
+
+5、dao部分函数查询数据库时未传入指针导致不能获取到数据
+
+6、第三方session库不支持redis的分布式扩展
+
+
 # 描述
 这是一个结构清晰的gin脚手架，有dao,dto,controller层。
 
